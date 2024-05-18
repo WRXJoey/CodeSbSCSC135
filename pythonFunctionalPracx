@@ -1,0 +1,45 @@
+concatName = lambda a,b : b + ", " + a
+
+largerValue = lambda num1, num2 : max(num1,num2)
+
+squared = lambda num: num * num
+
+def abs_sum(listnum):
+    return sum(map(abs, listnum))
+test1 = abs_sum([-1, 2, -4, 6, -9])
+print(test1)
+
+def count_negatives(listnum):
+    return len(list(filter(lambda x : x < 0, listnum)))
+test2 = count_negatives([-1, 2, -4, 6, -9])
+print(test2)
+
+def double_list(listnum): 
+    return list(map(lambda x : x+x, listnum))
+test3 = double_list([2, -1, 4, 16])
+print(test3)
+
+##requires file 
+def four_letter_words(stringz):
+    read = open(stringz,"r").read().split()
+    words = filter(lambda r: len(r) == 4, read)
+    count = len(list(words))
+    return count
+
+def glue_reverse(listStrings):
+    if not listStrings:
+        return ""
+    return reduce(lambda x,y: y+x,listStrings)
+test4 = glue_reverse(["the", "quick", "brown", "fox"])
+print(test4)
+
+def largest_even(listint):
+    even = (filter(lambda x: x%2==0,listint))
+    return max(even)
+test5 = largest_even([5, -1, 12, 10, 2, 8])
+print(test5)
+
+def total_circle_area(listnums):
+    return round(sum(map(lambda x: math.pi * x ** 2, listnums)))
+test6 =  total_circle_area([3.0, 1.0, 7.2, 5.5])
+print(test6)
